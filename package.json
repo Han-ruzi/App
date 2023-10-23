@@ -10,7 +10,7 @@
   },
   "dependencies": {
     "@sap/cds": "^7",
-    "@sap/audit-logging": "^5",
+    "@sap/audit-logging": "^5.7.2",
     "hdb": "^0.19",
 
     "@sap-cloud-sdk/http-client": "^3",
@@ -22,7 +22,7 @@
     "express": "^4"
   },
   "devDependencies": {
-    "@sap/ux-specification": "^1.96.4"
+    "@sap/ux-specification": "^1.108.16 "
   },
   "sapux": [
     "app/resources/fiori"
