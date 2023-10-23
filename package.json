@@ -12,7 +12,7 @@
     "@sap/audit-logging": "^5",
     "hdb": "^0.19",
 
-    "@sap-cloud-sdk/http-client": "^2.5",
+    "@sap-cloud-sdk/http-client": "^3",
     "@sap/xsenv": "^3",
     "@sap/xssec": "^3",
     "passport": "^0.4.1",
