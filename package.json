@@ -5,7 +5,8 @@
   "license": "UNLICENSED",
   "description": "Business Application",
   "engines": {
-    "node": "^16"
+    "node": "^18.14.2",
+    "npm" : "9.5.0"
   },
   "dependencies": {
     "@sap/cds": "^7",
