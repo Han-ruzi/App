@@ -8,7 +8,7 @@
     "node": "^16"
   },
   "dependencies": {
-    "@sap/cds": "^6.8",
+    "@sap/cds": "^7",
     "@sap/audit-logging": "^5",
     "hdb": "^0.19",
 
