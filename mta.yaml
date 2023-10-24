@@ -72,7 +72,7 @@ modules:
         - "*node_modules*"
         - package-lock.json
     parameters:
-      memory: 256M
+      memory: 1024M
       disk-quota: 1024M
     requires:
       - name: app-uaa
