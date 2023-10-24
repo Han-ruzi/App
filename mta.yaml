@@ -26,7 +26,7 @@ modules:
         - package-lock.json
     parameters:
       buildpack: nodejs_buildpack
-      memory: 256M
+      memory: 1024M
       disk-quota: 1024M
     requires:
       - name: app-uaa
