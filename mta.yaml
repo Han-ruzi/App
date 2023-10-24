@@ -15,7 +15,7 @@ build-parameters:
 modules:
   # ---------------- DATABASE DEPLOYER MODULE ------------------
   - name: app-db-deployer
-  # ------------------------------------------------------------
+    # ------------------------------------------------------------
     type: hdb
     path: gen/db
     build-parameters:
@@ -32,10 +32,9 @@ modules:
       - name: app-uaa
       - name: app-db
 
-
   # --------------------- SERVER MODULE ------------------------
   - name: app-srv
-  # ------------------------------------------------------------
+    # ------------------------------------------------------------
     type: nodejs
     path: gen/srv
     build-parameters:
@@ -57,12 +56,9 @@ modules:
         properties:
           srv-url: ${default-url}
 
-
-
-
   # ------------------ APP ROUTER MODULE -----------------------
   - name: app-app
-  # ------------------------------------------------------------
+    # ------------------------------------------------------------
     type: approuter.nodejs
     path: app
     build-parameters:
@@ -74,6 +70,7 @@ modules:
     parameters:
       memory: 1024M
       disk-quota: 1024M
+      keep-existing-routes: true
     requires:
       - name: app-uaa
       - name: srv-api
@@ -84,20 +81,22 @@ modules:
           timeout: 600000
           forwardAuthToken: true
 
-
 resources:
   # ----------------------- UAA SERVICE ------------------------
   - name: app-uaa
-  # ------------------------------------------------------------
+    # ------------------------------------------------------------
     type: org.cloudfoundry.managed-service
     parameters:
       service: xsuaa
       service-plan: application
       path: ./xs-security.json
+      config:
+        xsappname: app-${org}-${space}
+        tenant-mode: dedicated
 
   # -------------------- DESTINATION SERVICE -------------------
   - name: app-dest
-  # ------------------------------------------------------------
+    # ------------------------------------------------------------
     type: org.cloudfoundry.managed-service
     parameters:
       service: destination
@@ -116,20 +115,12 @@ resources:
                 URL.queries.api_key: <SetValueInCockpit>
                 HTML5.DynamicDestination: true
 
-
-
   # ------------------- HDI CONTAINER SERVICE ------------------
   - name: app-db
-  # ------------------------------------------------------------
+    # ------------------------------------------------------------
     type: com.sap.xs.hdi-container
     parameters:
       service: hana
       service-plan: hdi-shared
     properties:
       hdi-service-name: ${service-name}
-
-
-
-
-
-
