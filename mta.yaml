@@ -26,8 +26,8 @@ modules:
         - package-lock.json
     parameters:
       buildpack: nodejs_buildpack
-      memory: 1024M
-      disk-quota: 1024M
+      memory: 1024MB
+      disk-quota: 1024MB
     requires:
       - name: app-uaa
       - name: app-db
@@ -45,8 +45,8 @@ modules:
         - package-lock.json
     parameters:
       buildpack: nodejs_buildpack
-      memory: 512M
-      disk-quota: 1024M
+      memory: 512MB
+      disk-quota: 1024MB
     requires:
       - name: app-uaa
       - name: app-dest
@@ -68,8 +68,8 @@ modules:
         - "*node_modules*"
         - package-lock.json
     parameters:
-      memory: 1024M
-      disk-quota: 1024M
+      memory: 1024MB
+      disk-quota: 1024MB
       keep-existing-routes: true
     requires:
       - name: app-uaa
