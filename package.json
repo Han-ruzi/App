@@ -5,7 +5,7 @@
   "license": "UNLICENSED",
   "description": "Business Application",
   "engines": {
-    "node": "^18",
+    "node": "^12 || ^14",
     "npm": "9.5.0"
   },
   "dependencies": {
